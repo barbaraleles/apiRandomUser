@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RandomUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [RandomUserController::class, 'index']);
+Route::get('/api/users', [RandomUserController::class, 'getUsers']);
